@@ -18,14 +18,21 @@
     </div>
     <div class="form-container">
       <div class="form-inner">
-        <form action="url here" class="login" method="post">
+        <form action="#" class="login" method="post">
+            {% csrf_token %}
           <div class="field">
-            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="username" placeholder="username" required>
           </div>
           <div class="field">
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="password" placeholder="password" required>
           </div>
-
+          <div>
+            {% for message in messages %}
+            <h3>
+              {{message}}
+            </h3>
+            {% endfor %}
+          </div>
           <div class="field btn">
             <div class="btn-layer">
             </div>
@@ -33,7 +40,7 @@
 
           </div>
           <div class="signup-link">
-            Not a member? <a href="signup-page.html">Sign Up</a></div>
+            Not a member? <a href="\">Sign Up</a></div>
         </form>
       </div>
     </div>
